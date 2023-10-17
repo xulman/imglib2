@@ -1,0 +1,10 @@
+git clone git@github.com:xulman/imglib2.git
+cd imglib2
+git checkout -b stream-vlado  origin/stream-vlado
+
+mvn clean package dependency:copy-dependencies
+cd target
+
+java -cp "imglib2-6.2.1-SNAPSHOT.jar:dependency/*" net.imglib2.stream.ArrayStreamBenchmark
+
+
